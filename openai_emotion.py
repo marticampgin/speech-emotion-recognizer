@@ -1,7 +1,13 @@
 import openai
 
 class OpenaiEmotionDetector:
-    def __init__(self, model="gpt-3.5-turbo"):
+    """
+    Simple wrapper around OpenAi GPT model.
+    Sends a recorded message together with a prompt, 
+    that instructs the model to detect and return the emotion
+    in the text. 
+    """
+    def __init__(self, model: str="gpt-3.5-turbo") -> None:
         self.model = model
         self.prompt_role = """You are an emotion detector. Your task is to analyze the given text, and
                              and write which emotion does the text express. Consider one of the six emotions:
